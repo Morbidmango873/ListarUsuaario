@@ -1,0 +1,6 @@
+back/node_modules/
+teste/node_modules/
+back/.env
+teste/.env
+*.log
+.DS_Store
