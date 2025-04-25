@@ -1,0 +1,1 @@
+Em meu projeto eu possuo 2 pasta sendo a pasta Back e a pasta Teste, elas são o front(teste) e backend(back) de meu projeto para rodar elas, basicamente coloque essa pastas onde ja possua os Nodes Modules de um projeto fazendo o uso do React entao voce devera abrir 1 terminal para cada 1 delas e usar o NPM start para fazer a inicialização do projeto.
