@@ -1,36 +1,25 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DataList from "./components/DataList";
+import UserDetails from "./components/UserDetails";
+import UserEdit from "./components/UserEdit";
+import React from "react";
 
-export default function App(){
-  const [isModalOpen,setIsmodalOpen] = useState(false);
-  const [userClicked,setUserClicked] = useState(null);
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/user/:id" element={<UserDetails />} />
+        <Route path="/edit" element={<UserEdit />} />
+      </Routes>
+    </Router>
+  );
+}
 
-
-
-
-  function clicked(user){
-    console.log("Clicou", user);
-    setUserClicked(user);
-    setIsmodalOpen(true);
-
-  }
-
-  function close(user){
-    console.log("Clicou", user);
-    setUserClicked(null);
-    setIsmodalOpen(false);
-
-  }
-
-
-  return(
-    <div>
-      <DataList clicked={clicked}></DataList>
-      {isModalOpen && <div ckassName="modal">modal
-        <h5>{userClicked.name}</h5>
-        <button onClick={close}>Fechar</button>
-        </div>
-      }
+function Home() {
+  return (
+    <div className="container">
+      <DataList />
     </div>
-  )
+  );
 }
